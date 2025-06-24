@@ -22,7 +22,7 @@
     "preinstall": "npx --yes only-allow pnpm",
     "lint": "eslint . --max-warnings 0",
     "lint:fix": "eslint --fix .",
-    "prepare": "simple-git-hooks",
+    "prepare": "husky",
     "start": "next start",
     "type-check": "tsc --noEmit"
   },
@@ -47,6 +47,7 @@
     "cspell": "^9.1.2",
     "czg": "^1.11.2",
     "eslint": "9.29.0",
+    "husky": "^9.1.7",
     "knip": "^5.61.2",
     "lint-staged": "^16.1.2",
     "postcss": "^8.5.6",
@@ -54,7 +55,6 @@
     "postcss-load-config": "^6.0.1",
     "prettier": "^3.6.0",
     "prettier-plugin-tailwindcss": "^0.6.13",
-    "simple-git-hooks": "^2.13.0",
     "tailwindcss": "^3.4.17",
     "typescript": "5.8.3"
   },
@@ -68,9 +68,5 @@
       "pnpm check:spelling"
     ]
   },
-  "packageManager": "pnpm@10.12.2",
-  "simple-git-hooks": {
-    "pre-commit": "pnpm lint-staged",
-    "commit-msg": "pnpm commitlint --edit $1"
-  }
+  "packageManager": "pnpm@10.12.2"
 }
