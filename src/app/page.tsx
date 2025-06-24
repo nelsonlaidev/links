@@ -82,7 +82,7 @@ const HomePage = () => {
           className='rounded-full'
           priority
         />
-        <h1 className='text-xl font-semibold'>Nelson</h1>
+        <h1 className='text-xl font-semibold'>Nelson Lai</h1>
         <p className='text-[#a1a1a1]'>Full Stack Engineer</p>
       </div>
       <PrimaryLinks />
