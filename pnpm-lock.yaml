@@ -57,7 +57,7 @@ importers:
       cspell:
         specifier: ^9.1.2
         version: 9.1.2
-      cz-git:
+      czg:
         specifier: ^1.11.2
         version: 1.11.2
       eslint:
@@ -1324,9 +1324,10 @@ packages:
   csstype@3.1.3:
     resolution: {integrity: sha512-M1uQkMl8rQK/szD0LNhtqxIPLpimGm8sOBwU7lLnCpSbTyY3yeU1Vc7l4KT5zT4s/yOxHH5O7tIuuLOCnLADRw==}
 
-  cz-git@1.11.2:
-    resolution: {integrity: sha512-e54u6yJc80usJCWRQE9z8egpkqEvlM6aC70lTGjIsGI/ggtzeGU6udNAuHSBvLV+hMyss0ZS4KfodfwO9UJpqQ==}
+  czg@1.11.2:
+    resolution: {integrity: sha512-39FMIqz6xuelBvNa/jPc918CAgDNABfYnDT7wPbWaQGZ2a+sDBuI+X1pQ71jkFD32DcWkD/pVpZqlyvgtMJdGA==}
     engines: {node: '>=v12.20.0'}
+    hasBin: true
 
   damerau-levenshtein@1.0.8:
     resolution: {integrity: sha512-sdQSFB7+llfUcQHUQO3+B8ERRj0Oa4w9POWMI/puGtuf7gFywGmkaLCElnudfTiKZV+NvHqL0ifzdrI8Ro7ESA==}
@@ -4665,7 +4666,7 @@ snapshots:
 
   csstype@3.1.3: {}
 
-  cz-git@1.11.2: {}
+  czg@1.11.2: {}
 
   damerau-levenshtein@1.0.8: {}
 
