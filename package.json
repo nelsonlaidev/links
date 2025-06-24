@@ -58,9 +58,15 @@
     "tailwindcss": "^3.4.17",
     "typescript": "5.8.3"
   },
+  "engines": {
+    "node": ">=22"
+  },
   "lint-staged": {
     "*.{cjs,mjs,js,jsx,cts,mts,ts,tsx,json}": "eslint --fix",
-    "**/*": "prettier --write --ignore-unknown"
+    "**/*": [
+      "prettier --write --ignore-unknown",
+      "pnpm check:spelling"
+    ]
   },
   "packageManager": "pnpm@10.12.2",
   "simple-git-hooks": {
