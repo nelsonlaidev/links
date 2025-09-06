@@ -1,3 +1,53 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@theme inline {
+  --color-sparkle: hsl(260 0% 12%);
+  --background-image-sparkle-radial: radial-gradient(
+    80% 100% at center 120%,
+    hsl(0 0% 20% / var(--active)),
+    transparent
+  );
+  --background-image-sparkle-text: linear-gradient(
+    90deg,
+    hsl(0 0% calc((var(--active) * 100%) + 65%)),
+    hsl(0 0% calc((var(--active) * 100%) + 36%))
+  );
+  --shadow-sparkle:
+    0 0 calc(var(--active) * 6em) calc(var(--active) * 3em) hsl(0 0% 13.08% / 75%),
+    0 0.05em 0 0 hsl(0 0% calc((var(--active) * 20%) + 30%)) inset,
+    0 -0.05em 0 0 hsl(0 0% calc(var(--active) * 30%)) inset;
+
+  --animate-spotlight: spotlight 2s 0.75s forwards;
+  --animate-float-out: float-out calc(var(--duration, 1) * 1s) calc(var(--delay) * -1s) infinite linear;
+  --animate-rotate: rotate var(--spark) linear infinite both;
+  --animate-flip: flip calc(var(--spark) * 2) infinite steps(2, end);
+
+  @keyframes spotlight {
+    0% {
+      opacity: 0;
+      transform: translate(-72%, -62%) scale(0.5);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(-50%, -40%) scale(1);
+    }
+  }
+
+  @keyframes float-out {
+    to {
+      rotate: 360deg;
+    }
+  }
+
+  @keyframes rotate {
+    to {
+      transform: rotate(90deg);
+    }
+  }
+
+  @keyframes flip {
+    to {
+      rotate: 360deg;
+    }
+  }
+}

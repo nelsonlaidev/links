@@ -1,0 +1,22 @@
+$schema: https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json
+version: '0.2'
+enableGlobDot: true
+useGitignore: true
+ignorePaths:
+  - .git
+  - pnpm-lock.yaml
+dictionaries:
+  - npm
+  - fullstack
+words:
+  - bradlc
+  - dbaeumer
+  - devdotto
+  - linecap
+  - linejoin
+  - linktree
+  - nelsonlai
+  - nelsonlaidev
+  - sonarjs
+  - stackoverflow
+  - umami

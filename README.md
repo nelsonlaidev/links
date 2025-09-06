@@ -1,15 +1,9 @@
 <p align="center">
-  <img src="https://nelsonlai.me/images/projects/links/cover.png">
+  <img src="public/icon.png" height="128">
+  <h1 align="center">Links</h1>
 </p>
 
-## Tech Stack
-
-| Name       | Link                                                      |
-| ---------- | --------------------------------------------------------- |
-| Framework  | [Next.js](https://nextjs.org/)                            |
-| Deployment | [Vercel](https://vercel.com)                              |
-| Styling    | [Tailwindcss](https://tailwindcss.com)                    |
-| Icons      | [react-icons](https://react-icons.github.io/react-icons/) |
+Links is a linktree-like application built with Next.js and Tailwindcss. It allows you to create a personalized page with links to your social media profiles, websites, and other online presence.
 
 ## Getting Started
 
@@ -18,7 +12,7 @@ Follow these steps to run the project locally on your machine:
 1. Clone the repository
 
 ```bash
-git clone https://github.com/tszhong0411/links.git
+git clone https://github.com/nelsonlaidev/links.git
 ```
 
 2. Navigate to the project directory
@@ -39,7 +33,8 @@ pnpm install
 pnpm dev
 ```
 
-<hr>
+---
+
 <p align="center">
 Made with ❤️ in Hong Kong
 </p>

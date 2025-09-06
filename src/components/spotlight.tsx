@@ -1,4 +1,4 @@
-import { cn } from '@tszhong0411/utils'
+import { cn } from '@/utils/cn'
 
 type SpotlightProps = {
   className?: string
@@ -9,10 +9,7 @@ const Spotlight = (props: SpotlightProps) => {
 
   return (
     <svg
-      className={cn(
-        'pointer-events-none absolute z-10 h-[169%] w-[84%] animate-spotlight opacity-0',
-        className
-      )}
+      className={cn('pointer-events-none absolute z-10 h-[169%] w-[84%] animate-spotlight opacity-0', className)}
       aria-label='A spotlight effect'
       xmlns='http://www.w3.org/2000/svg'
       viewBox='0 0 3787 2842'

@@ -4,18 +4,19 @@ import '@/styles/globals.css'
 
 import { GeistSans } from 'geist/font/sans'
 
+import Analytics from '@/components/analytics'
 import Footer from '@/components/footer'
+import { env } from '@/env'
 
-import Analytics from './analytics'
 import grid from './grid.svg'
 
 type RootLayoutProps = {
   children: React.ReactNode
 }
 
-const SITE_URL =
-  process.env.NODE_ENV === 'production' ? 'https://links.nelsonlai.me' : 'http://localhost:3000'
-const SITE_TITLE = 'Links | Nelson Lai - A Full Stack Engineer'
+const MY_NAME = 'Nelson Lai'
+const SITE_URL = env.NEXT_PUBLIC_SITE_URL
+const SITE_TITLE = `Links | ${MY_NAME}`
 const SITE_DESCRIPTION =
   'Connect with me on all my social media profiles through Links. Discover new content and stay updated with my latest posts!'
 
@@ -34,17 +35,24 @@ export const metadata: Metadata = {
       'max-snippet': -1
     }
   },
-  manifest: '/favicon/site.webmanifest',
+  authors: {
+    name: MY_NAME,
+    url: SITE_URL
+  },
+  manifest: '/site.webmanifest',
   twitter: {
-    title: 'Nelson Lai',
     card: 'summary_large_image',
-    site: '@tszhong0411',
-    creator: '@tszhong0411',
+    title: MY_NAME,
+    description: SITE_DESCRIPTION,
+    site: '@nelsonlaidev',
+    siteId: '1152256803746377730',
+    creator: '@nelsonlaidev',
+    creatorId: '1152256803746377730',
     images: [
       {
-        url: 'https://nelsonlai.me/images/projects/links/cover.png',
-        width: 1280,
-        height: 832,
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
         alt: SITE_DESCRIPTION
       }
     ]
@@ -52,8 +60,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: SITE_URL
   },
-  keywords: ['tszhong0411', 'tszhong0411 social media', 'tszhong0411 links', 'links'],
-  creator: 'tszhong0411',
+  keywords: [MY_NAME, 'nelsonlaidev social media', 'nelsonlaidev links', 'links'],
+  creator: 'nelsonlaidev',
   openGraph: {
     url: SITE_URL,
     type: 'website',
@@ -63,36 +71,45 @@ export const metadata: Metadata = {
     locale: 'en-US',
     images: [
       {
-        url: 'https://nelsonlai.me/images/projects/links/cover.png',
-        width: 1280,
-        height: 832,
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
         alt: SITE_DESCRIPTION,
         type: 'image/png'
       }
     ]
   },
   icons: {
-    icon: '/favicon/favicon.ico',
-    shortcut: '/favicon/favicon.ico',
+    icon: {
+      rel: 'icon',
+      type: 'image/x-icon',
+      url: '/favicon.ico'
+    },
     apple: [
       {
-        url: '/favicon/apple-touch-icon.png',
-        sizes: '180x180',
-        type: 'image/png'
+        type: 'image/png',
+        url: '/apple-touch-icon.png',
+        sizes: '180x180'
       }
     ],
     other: [
       {
         rel: 'icon',
-        type: 'image/png',
-        sizes: '16x16',
-        url: '/favicon/favicon-16x16.png'
+        type: 'image/svg+xml',
+        url: '/favicon.svg',
+        sizes: 'any'
       },
       {
         rel: 'icon',
         type: 'image/png',
-        sizes: '32x32',
-        url: '/favicon/favicon-32x32.png'
+        url: '/favicon-16x16.png',
+        sizes: '16x16'
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        url: '/favicon-32x32.png',
+        sizes: '32x32'
       }
     ]
   }
@@ -108,8 +125,8 @@ const RootLayout = (props: RootLayoutProps) => {
   const { children } = props
 
   return (
-    <html lang='en-US' className={GeistSans.variable}>
-      <body className='relative bg-[#020202] font-sans text-white'>
+    <html lang='en-US' className={GeistSans.className}>
+      <body className='relative bg-[#020202] text-white'>
         <div
           className='absolute inset-0 -z-20 size-full'
           style={{
