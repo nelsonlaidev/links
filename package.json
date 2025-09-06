@@ -1,20 +1,14 @@
 {
-  "private": true,
   "name": "links",
   "version": "0.0.0",
-  "description": "tszhong0411's social media links",
   "license": "MIT",
-  "author": "tszhong0411 <me@nelsonlai.me> (https://github.com/tszhong0411/)",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/tszhong0411/links.git"
-  },
+  "author": "Nelson Lai <me@nelsonlai.dev> (https://github.com/nelsonlaidev/)",
   "type": "module",
   "scripts": {
     "build": "next build",
     "check": "pnpm lint && pnpm type-check && pnpm format:check && pnpm check:spelling && pnpm check:knip",
     "check:knip": "knip",
-    "check:spelling": "cspell --show-context --show-suggestions",
+    "check:spelling": "cspell \"**\" --no-progress --no-summary --no-must-find-files --unique",
     "clean": "rm -rf .next",
     "dev": "next dev --turbo",
     "format:check": "prettier --cache --check --ignore-path .gitignore --ignore-path .prettierignore .",
@@ -24,49 +18,52 @@
     "lint:fix": "eslint --fix .",
     "prepare": "husky",
     "start": "next start",
-    "type-check": "tsc --noEmit"
-  },
-  "dependencies": {
-    "@tszhong0411/utils": "^0.0.23",
-    "geist": "^1.4.2",
-    "next": "15.3.4",
-    "react": "19.1.0",
-    "react-dom": "19.1.0",
-    "react-icons": "^5.5.0"
-  },
-  "devDependencies": {
-    "@commitlint/cli": "19.8.1",
-    "@commitlint/config-conventional": "19.8.1",
-    "@tszhong0411/eslint-config": "^0.1.37",
-    "@tszhong0411/prettier-config": "^0.0.18",
-    "@tszhong0411/prettier-plugin-package-json": "^1.0.0",
-    "@tszhong0411/tsconfig": "^0.0.14",
-    "@types/node": "22.15.32",
-    "@types/react": "19.1.8",
-    "@types/react-dom": "19.1.6",
-    "cspell": "^9.1.2",
-    "czg": "^1.11.2",
-    "eslint": "9.29.0",
-    "husky": "^9.1.7",
-    "knip": "^5.61.2",
-    "lint-staged": "^16.1.2",
-    "postcss": "^8.5.6",
-    "postcss-lightningcss": "^1.0.1",
-    "postcss-load-config": "^6.0.1",
-    "prettier": "^3.6.0",
-    "prettier-plugin-tailwindcss": "^0.6.13",
-    "tailwindcss": "^3.4.17",
-    "typescript": "5.8.3"
-  },
-  "engines": {
-    "node": ">=22"
+    "type-check": "tsc --noEmit",
+    "typegen": "next typegen"
   },
   "lint-staged": {
-    "*.{cjs,mjs,js,jsx,cts,mts,ts,tsx,json}": "eslint --fix",
+    "*.{mjs,js,ts,tsx}": "eslint --fix",
     "**/*": [
       "prettier --write --ignore-unknown",
       "pnpm check:spelling"
     ]
   },
-  "packageManager": "pnpm@10.12.2"
+  "dependencies": {
+    "@t3-oss/env-nextjs": "^0.13.8",
+    "clsx": "^2.1.1",
+    "geist": "^1.5.1",
+    "next": "15.5.2",
+    "react": "19.1.1",
+    "react-dom": "19.1.1",
+    "react-icons": "^5.5.0",
+    "tailwind-merge": "^3.3.1",
+    "zod": "^4.1.5"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "19.8.1",
+    "@commitlint/config-conventional": "19.8.1",
+    "@nelsonlaidev/eslint-config": "^1.0.0",
+    "@nelsonlaidev/prettier-config": "^0.1.0",
+    "@nelsonlaidev/typescript-config": "^0.0.3",
+    "@tailwindcss/postcss": "^4.1.13",
+    "@types/node": "24.3.1",
+    "@types/react": "19.1.12",
+    "@types/react-dom": "19.1.9",
+    "cspell": "^9.2.1",
+    "czg": "^1.12.0",
+    "eslint": "9.34.0",
+    "husky": "^9.1.7",
+    "knip": "^5.63.1",
+    "lint-staged": "^16.1.6",
+    "postcss": "^8.5.6",
+    "postcss-load-config": "^6.0.1",
+    "prettier": "^3.6.2",
+    "prettier-plugin-packagejson": "^2.5.19",
+    "tailwindcss": "^4.1.13",
+    "typescript": "^5.9.2"
+  },
+  "packageManager": "pnpm@10.15.1",
+  "engines": {
+    "node": ">=22"
+  }
 }

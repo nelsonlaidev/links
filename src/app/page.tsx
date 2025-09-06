@@ -12,9 +12,8 @@ import {
   SiYoutube
 } from 'react-icons/si'
 
+import PrimaryLinks from '@/components/primary-links'
 import Spotlight from '@/components/spotlight'
-
-import PrimaryLinks from './primary-links'
 
 const links = [
   {
@@ -25,12 +24,12 @@ const links = [
   {
     icon: <SiYoutube className='text-zinc-300' />,
     title: 'YouTube',
-    url: 'https://www.youtube.com/@tszhong0411'
+    url: 'https://www.youtube.com/@nelsonlaidev'
   },
   {
     icon: <SiFacebook className='text-zinc-300' />,
     title: 'Facebook',
-    url: 'https://www.facebook.com/tszhong0411/'
+    url: 'https://www.facebook.com/nelsonlaidev/'
   },
   {
     icon: <SiSteam className='text-zinc-300' />,
@@ -40,12 +39,12 @@ const links = [
   {
     icon: <SiInstagram className='text-zinc-300' />,
     title: 'Instagram',
-    url: 'https://instagram.com/tszhong0411/'
+    url: 'https://instagram.com/nelsonlaidev/'
   },
   {
     icon: <SiGithub className='text-zinc-300' />,
     title: 'GitHub',
-    url: 'https://github.com/tszhong0411'
+    url: 'https://github.com/nelsonlaidev'
   },
   {
     icon: <SiDiscord className='text-zinc-300' />,
@@ -55,7 +54,7 @@ const links = [
   {
     icon: <SiX className='text-zinc-300' />,
     title: 'X',
-    url: 'https://x.com/tszhong0411'
+    url: 'https://x.com/nelsonlaidev'
   },
   {
     icon: <SiStackoverflow className='text-zinc-300' />,
@@ -65,14 +64,14 @@ const links = [
   {
     icon: <SiDevdotto className='text-zinc-300' />,
     title: 'Dev.to',
-    url: 'https://dev.to/tszhong0411'
+    url: 'https://dev.to/nelsonlaidev'
   }
 ]
 
 const HomePage = () => {
   return (
     <>
-      <div className='relative mx-auto flex flex-col items-center justify-center gap-4 pb-10 pt-24'>
+      <div className='relative mx-auto flex flex-col items-center justify-center gap-4 pt-24 pb-10'>
         <Spotlight className='-top-4 left-56' />
         <Image
           src='https://nelsonlai.me/images/avatar.png'
@@ -83,7 +82,7 @@ const HomePage = () => {
           priority
         />
         <h1 className='text-xl font-semibold'>Nelson Lai</h1>
-        <p className='text-[#a1a1a1]'>Full Stack Engineer</p>
+        <p className='text-[#a1a1a1]'>full stack engineer</p>
       </div>
       <PrimaryLinks />
       <div className='flex flex-col gap-4 py-3'>
