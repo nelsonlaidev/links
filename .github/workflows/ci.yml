@@ -30,7 +30,7 @@ jobs:
         uses: ./.github/actions/setup
 
       - name: Generate Next.js route types
-        run: pnpm --filter web typegen
+        run: pnpm typegen
 
       - name: Run type check
         run: pnpm type-check

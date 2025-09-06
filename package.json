@@ -18,7 +18,8 @@
     "lint:fix": "eslint --fix .",
     "prepare": "husky",
     "start": "next start",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "typegen": "next typegen"
   },
   "lint-staged": {
     "*.{mjs,js,ts,tsx}": "eslint --fix",
