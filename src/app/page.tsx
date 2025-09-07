@@ -68,7 +68,7 @@ const links = [
   }
 ]
 
-const HomePage = () => {
+const Page = () => {
   return (
     <>
       <div className='relative mx-auto flex flex-col items-center justify-center gap-4 pt-24 pb-10'>
@@ -107,4 +107,4 @@ const HomePage = () => {
   )
 }
 
-export default HomePage
+export default Page

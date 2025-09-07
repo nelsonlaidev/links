@@ -10,7 +10,7 @@ import { env } from '@/env'
 
 import grid from './grid.svg'
 
-type RootLayoutProps = {
+type LayoutProps = {
   children: React.ReactNode
 }
 
@@ -121,7 +121,7 @@ export const viewport: Viewport = {
   }
 }
 
-const RootLayout = (props: RootLayoutProps) => {
+const Layout = (props: LayoutProps) => {
   const { children } = props
 
   return (
@@ -149,4 +149,4 @@ const RootLayout = (props: RootLayoutProps) => {
   )
 }
 
-export default RootLayout
+export default Layout
