@@ -74,7 +74,7 @@ const Page = () => {
       <div className='relative mx-auto flex flex-col items-center justify-center gap-4 pt-24 pb-10'>
         <Spotlight className='-top-4 left-56' />
         <Image
-          src='https://nelsonlai.me/images/avatar.png'
+          src='https://nelsonlai.dev/images/avatar.png'
           width={90}
           height={90}
           alt='Logo'

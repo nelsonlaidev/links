@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   },
   authors: {
     name: MY_NAME,
-    url: 'https://nelsonlai.me'
+    url: 'https://nelsonlai.dev'
   },
   manifest: '/site.webmanifest',
   twitter: {
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     creatorId: '1152256803746377730',
     images: [
       {
-        url: 'https://nelsonlai.me/images/og-image.png',
+        url: 'https://nelsonlai.dev/images/og-image.png',
         width: 1200,
         height: 630,
         alt: SITE_DESCRIPTION
@@ -71,7 +71,7 @@ export const metadata: Metadata = {
     locale: 'en-US',
     images: [
       {
-        url: 'https://nelsonlai.me/images/og-image.png',
+        url: 'https://nelsonlai.dev/images/og-image.png',
         width: 1200,
         height: 630,
         alt: SITE_DESCRIPTION,
