@@ -9,25 +9,25 @@ Links is a linktree-like application built with Next.js and Tailwindcss. It allo
 
 Follow these steps to run the project locally on your machine:
 
-1. Clone the repository
+1. Clone the repository.
 
 ```bash
 git clone https://github.com/nelsonlaidev/links.git
 ```
 
-2. Navigate to the project directory
+2. Navigate to the project directory.
 
 ```bash
 cd links
 ```
 
-3. Install dependencies
+3. Install dependencies.
 
 ```bash
 pnpm install
 ```
 
-4. Run the development server
+4. Run the development server.
 
 ```bash
 pnpm dev
