@@ -13,7 +13,7 @@ jobs:
       - name: Checkout branch
         uses: actions/checkout@v4
 
-      - name: Setup
+      - name: Configure environment
         uses: ./.github/actions/setup
 
       - name: Run ESLint
@@ -26,7 +26,7 @@ jobs:
       - name: Checkout branch
         uses: actions/checkout@v4
 
-      - name: Setup
+      - name: Configure environment
         uses: ./.github/actions/setup
 
       - name: Generate Next.js route types
@@ -42,7 +42,7 @@ jobs:
       - name: Checkout branch
         uses: actions/checkout@v4
 
-      - name: Setup
+      - name: Configure environment
         uses: ./.github/actions/setup
 
       - name: Run Prettier
@@ -55,7 +55,7 @@ jobs:
       - name: Checkout branch
         uses: actions/checkout@v4
 
-      - name: Setup
+      - name: Configure environment
         uses: ./.github/actions/setup
 
       - name: Run spelling check
@@ -68,7 +68,7 @@ jobs:
       - name: Checkout branch
         uses: actions/checkout@v4
 
-      - name: Setup
+      - name: Configure environment
         uses: ./.github/actions/setup
 
       - name: Run Knip
