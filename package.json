@@ -17,7 +17,8 @@
     "lint:fix": "eslint --fix .",
     "prepare": "lefthook install",
     "start": "next start",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "typegen": "next typegen"
   },
   "dependencies": {
     "@t3-oss/env-nextjs": "0.13.8",
