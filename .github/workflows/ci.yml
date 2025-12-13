@@ -1,9 +1,10 @@
 name: CI
 
 on:
-  pull_request:
+  push:
     branches:
       - main
+  pull_request:
 
 jobs:
   eslint:
@@ -29,10 +30,7 @@ jobs:
       - name: Configure environment
         uses: ./.github/actions/setup
 
-      - name: Generate Next.js route types
-        run: pnpm typegen
-
-      - name: Run type check
+      - name: Run typecheck
         run: pnpm typecheck
 
   prettier:
