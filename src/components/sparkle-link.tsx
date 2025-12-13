@@ -1,3 +1,7 @@
+'use client'
+
+import { useEffect, useState } from 'react'
+
 import { cn } from '@/utils/cn'
 
 type SparkleLinkProps = React.ComponentProps<'a'>
@@ -10,7 +14,7 @@ const SparkleLink = (props: SparkleLinkProps) => {
       <a
         className={cn(
           [
-            'peer relative flex scale-[calc(1+var(--active)*0.1)] items-center gap-[0.25em] rounded-[100px] bg-sparkle bg-sparkle-radial px-6 py-4 font-medium whitespace-nowrap shadow-sparkle transition-[shadow_var(--transition),scale_var(--transition),background_var(--transition))] [--active:0] [--cut:0.1em]',
+            'peer relative flex scale-[calc(1+var(--active)*0.1)] items-center gap-[0.25em] rounded-[100px] bg-sparkle bg-sparkle-radial px-6 py-4 font-medium whitespace-nowrap shadow-sparkle transition-[shadow_var(--transition),scale_var(--transition),background_var(--transition)] [--active:0] [--cut:0.1em]',
             'hover:[--active:1] hover:[--play-state:running]',
             'before:absolute before:inset-[-0.25em] before:-z-10 before:rounded-[100px] before:border-[0.25em] before:border-solid before:border-[hsl(0_0%_20.08%/0.5)] before:opacity-(--active,0) before:transition-[opacity_var(--transition)]',
             'active:scale-100'
@@ -37,7 +41,7 @@ type SparkleLinkParticleProps = React.SVGProps<SVGSVGElement>
 const SparkleLinkParticle = (props: SparkleLinkParticleProps) => {
   return (
     <svg
-      className='absolute top-[calc(var(--y)*1%)] left-[calc(var(--x)*1%)] -z-10 w-[calc(var(--size,0.25)*1rem)] origin-[var(--origin-x,1000%)_var(--origin-y,1000%)] animate-float-out fill-white opacity-(--alpha,1) [animation-play-state:var(--play-state,_paused)] even:[animation-direction:reverse]'
+      className='absolute top-[calc(var(--y)*1%)] left-[calc(var(--x)*1%)] -z-10 w-[calc(var(--size,0.25)*1rem)] origin-[var(--origin-x,1000%)_var(--origin-y,1000%)] animate-float-out fill-white opacity-(--alpha,1) [animation-play-state:var(--play-state,paused)] even:[animation-direction:reverse]'
       aria-label='A particle'
       viewBox='0 0 15 15'
       fill='none'
@@ -54,33 +58,41 @@ const SparkleLinkParticle = (props: SparkleLinkParticleProps) => {
   )
 }
 
+const RANDOM = (min: number, max: number) => Math.floor(Math.random() * (max - min + 1) + min)
+
 const SparkleLinkParticleGroup = () => {
+  const [particles, setParticles] = useState<Array<{ id: number; style: React.CSSProperties }>>([])
+
+  useEffect(() => {
+    const sparkleStyle = {
+      '--delay': `${RANDOM(1, 10)}`,
+      '--alpha': `${RANDOM(40, 90) / 100}`,
+      '--origin-x': `${Math.random() > 0.5 ? RANDOM(300, 800) * -1 : RANDOM(300, 800)}%`,
+      '--origin-y': `${Math.random() > 0.5 ? RANDOM(300, 800) * -1 : RANDOM(300, 800)}%`,
+      '--size': `${RANDOM(40, 90) / 100}`
+    } as React.CSSProperties
+
+    setParticles(
+      Array.from({ length: 20 }).map((_, i) => ({
+        id: i,
+        style: {
+          '--x': `${RANDOM(20, 80)}`,
+          '--y': `${RANDOM(20, 80)}`,
+          '--duration': `${RANDOM(6, 20)}`,
+          ...sparkleStyle
+        } as React.CSSProperties
+      }))
+    )
+  }, [])
+
   return (
     <span
       aria-hidden='true'
       className='absolute top-1/2 left-1/2 -z-10 aspect-square w-[200%] -translate-1/2 opacity-(--active,0) [-webkit-mask:radial-gradient(white,transparent_65%)] [transition:opacity_var(--transition)] peer-hover:[--active:1] peer-hover:[--play-state:running]'
     >
-      {[...Array.from({ length: 20 }).keys()].map((i) => {
-        const RANDOM = (min: number, max: number) => Math.floor(Math.random() * (max - min + 1) + min)
-
-        return (
-          <SparkleLinkParticle
-            key={i}
-            style={
-              {
-                '--x': `${RANDOM(20, 80)}`,
-                '--y': `${RANDOM(20, 80)}`,
-                '--duration': `${RANDOM(6, 20)}`,
-                '--delay': `${RANDOM(1, 10)}`,
-                '--alpha': `${RANDOM(40, 90) / 100}`,
-                '--origin-x': `${Math.random() > 0.5 ? RANDOM(300, 800) * -1 : RANDOM(300, 800)}%`,
-                '--origin-y': `${Math.random() > 0.5 ? RANDOM(300, 800) * -1 : RANDOM(300, 800)}%`,
-                '--size': `${RANDOM(40, 90) / 100}`
-              } as React.CSSProperties
-            }
-          />
-        )
-      })}
+      {particles.map((particle) => (
+        <SparkleLinkParticle key={particle.id} style={particle.style} />
+      ))}
     </span>
   )
 }
@@ -88,8 +100,8 @@ const SparkleLinkParticleGroup = () => {
 const SparkleLinkSpark = () => (
   <span
     className={cn([
-      'absolute inset-0 [rotate:0deg] animate-flip overflow-hidden rounded-[100px] [mask:linear-gradient(white,transparent_50%)]',
-      'before:absolute before:top-0 before:left-1/2 before:aspect-square before:w-[200%] before:[translate:-50%_-15%] before:[transform:rotate(-90deg)] before:animate-rotate before:bg-[conic-gradient(from_0deg,transparent_0_340deg,white_360deg)] before:opacity-[calc(var(--active)+0.4)] before:[transition:opacity_var(--transition)]',
+      'absolute inset-0 rotate-0 animate-flip overflow-hidden rounded-[100px] [mask:linear-gradient(white,transparent_50%)]',
+      'before:absolute before:top-0 before:left-1/2 before:aspect-square before:w-[200%] before:[translate:-50%_-15%] before:transform-[rotate(-90deg)] before:animate-rotate before:bg-[conic-gradient(from_0deg,transparent_0_340deg,white_360deg)] before:opacity-[calc(var(--active)+0.4)] before:[transition:opacity_var(--transition)]',
       'after:absolute after:inset-(--cut) after:rounded-[100px]'
     ])}
   />
