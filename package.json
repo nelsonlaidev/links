@@ -21,35 +21,35 @@
     "typegen": "next typegen"
   },
   "dependencies": {
-    "@t3-oss/env-nextjs": "0.13.8",
+    "@t3-oss/env-nextjs": "0.13.10",
     "clsx": "2.1.1",
     "geist": "1.5.1",
-    "next": "16.0.10",
+    "next": "16.1.1",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "react-icons": "5.5.0",
     "tailwind-merge": "3.4.0",
-    "zod": "4.1.13"
+    "zod": "4.2.1"
   },
   "devDependencies": {
-    "@nelsonlaidev/eslint-config": "2.4.2",
+    "@nelsonlaidev/eslint-config": "2.4.5",
     "@nelsonlaidev/prettier-config": "0.1.1",
     "@nelsonlaidev/typescript-config": "1.1.1",
     "@tailwindcss/postcss": "4.1.18",
-    "@types/node": "24.10.3",
+    "@types/node": "24.10.4",
     "@types/react": "19.2.7",
     "@types/react-dom": "19.2.3",
     "eslint": "9.39.2",
-    "knip": "5.73.4",
-    "lefthook": "2.0.11",
+    "knip": "5.78.0",
+    "lefthook": "2.0.13",
     "postcss-load-config": "6.0.1",
     "prettier": "3.7.4",
     "prettier-plugin-packagejson": "2.5.20",
     "tailwindcss": "4.1.18",
     "typescript": "5.9.3"
   },
-  "packageManager": "pnpm@10.25.0",
+  "packageManager": "pnpm@10.26.2",
   "engines": {
-    "node": ">=22"
+    "node": ">=24"
   }
 }
