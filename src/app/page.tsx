@@ -19,52 +19,52 @@ const links = [
   {
     icon: <FiBook className='text-zinc-300' />,
     title: 'Blog',
-    url: 'https://nelsonlai.link/s/blog'
+    url: 'https://nelsonlai.dev'
   },
   {
     icon: <SiYoutube className='text-zinc-300' />,
     title: 'YouTube',
-    url: 'https://nelsonlai.link/s/youtube'
+    url: 'https://www.youtube.com/@nelsonlaidev'
   },
   {
     icon: <SiFacebook className='text-zinc-300' />,
     title: 'Facebook',
-    url: 'https://nelsonlai.link/s/facebook'
+    url: 'https://www.facebook.com/nelsonlaidev'
   },
   {
     icon: <SiSteam className='text-zinc-300' />,
     title: 'Steam',
-    url: 'https://nelsonlai.link/s/steam'
+    url: 'https://steamcommunity.com/id/nelsonlaidev/'
   },
   {
     icon: <SiInstagram className='text-zinc-300' />,
     title: 'Instagram',
-    url: 'https://nelsonlai.link/s/instagram'
+    url: 'https://www.instagram.com/nelsonlaidev'
   },
   {
     icon: <SiGithub className='text-zinc-300' />,
     title: 'GitHub',
-    url: 'https://nelsonlai.link/s/github'
+    url: 'https://github.com/nelsonlaidev'
   },
   {
     icon: <SiDiscord className='text-zinc-300' />,
     title: 'Discord',
-    url: 'https://nelsonlai.link/s/discord'
+    url: 'https://discord.com/users/886269624608522240'
   },
   {
     icon: <SiX className='text-zinc-300' />,
     title: 'X',
-    url: 'https://nelsonlai.link/s/twitter'
+    url: 'https://x.com/nelsonlaidev'
   },
   {
     icon: <SiStackoverflow className='text-zinc-300' />,
     title: 'Stack overflow',
-    url: 'https://nelsonlai.link/s/stackoverflow'
+    url: 'https://stackoverflow.com/users/15166428/nelson-lai'
   },
   {
     icon: <SiDevdotto className='text-zinc-300' />,
     title: 'Dev.to',
-    url: 'https://nelsonlai.link/s/devto'
+    url: 'https://dev.to/nelsonlaidev'
   }
 ]
 
