@@ -6,61 +6,44 @@ on:
       - main
   pull_request:
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 env:
   NEXT_PUBLIC_SITE_URL: http://localhost:3000
 
 jobs:
-  eslint:
-    name: ESLint
-    runs-on: ubuntu-latest
+  checks:
+    name: Checks
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+
     steps:
-      - name: Checkout branch
-        uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
 
-      - name: Configure environment
-        uses: ./.github/actions/setup
+      - name: Setup pnpm
+        uses: pnpm/setup@v3
+        with:
+          runtime: node@24
+          cache: true
+          require-lockfile: true
 
-      - name: Run ESLint
-        run: pnpm lint
+      - name: Generate Next.js types
+        run: pnpm exec next typegen
 
-  types:
-    name: TypeScript
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout branch
-        uses: actions/checkout@v4
+      - parallel:
+          - name: Lint
+            run: pnpm lint
 
-      - name: Configure environment
-        uses: ./.github/actions/setup
+          - name: Typecheck
+            run: pnpm typecheck
 
-      - name: Generate Next.js route types
-        run: pnpm typegen
+          - name: Format check
+            run: pnpm format:check
 
-      - name: Run typecheck
-        run: pnpm typecheck
-
-  prettier:
-    name: Prettier
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout branch
-        uses: actions/checkout@v4
-
-      - name: Configure environment
-        uses: ./.github/actions/setup
-
-      - name: Run Prettier
-        run: pnpm format:check
-
-  knip:
-    name: Knip
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout branch
-        uses: actions/checkout@v4
-
-      - name: Configure environment
-        uses: ./.github/actions/setup
-
-      - name: Run Knip
-        run: pnpm knip
+          - name: Knip
+            run: pnpm knip

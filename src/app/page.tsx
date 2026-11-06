@@ -9,7 +9,7 @@ import {
   SiStackoverflow,
   SiSteam,
   SiX,
-  SiYoutube
+  SiYoutube,
 } from 'react-icons/si'
 
 import PrimaryLinks from '@/components/primary-links'
@@ -19,53 +19,53 @@ const links = [
   {
     icon: <FiBook className='text-zinc-300' />,
     title: 'Blog',
-    url: 'https://nelsonlai.dev'
+    url: 'https://nelsonlai.dev',
   },
   {
     icon: <SiYoutube className='text-zinc-300' />,
     title: 'YouTube',
-    url: 'https://www.youtube.com/@nelsonlaidev'
+    url: 'https://www.youtube.com/@nelsonlaidev',
   },
   {
     icon: <SiFacebook className='text-zinc-300' />,
     title: 'Facebook',
-    url: 'https://www.facebook.com/nelsonlaidev'
+    url: 'https://www.facebook.com/nelsonlaidev',
   },
   {
     icon: <SiSteam className='text-zinc-300' />,
     title: 'Steam',
-    url: 'https://steamcommunity.com/id/nelsonlaidev/'
+    url: 'https://steamcommunity.com/id/nelsonlaidev/',
   },
   {
     icon: <SiInstagram className='text-zinc-300' />,
     title: 'Instagram',
-    url: 'https://www.instagram.com/nelsonlaidev'
+    url: 'https://www.instagram.com/nelsonlaidev',
   },
   {
     icon: <SiGithub className='text-zinc-300' />,
     title: 'GitHub',
-    url: 'https://github.com/nelsonlaidev'
+    url: 'https://github.com/nelsonlaidev',
   },
   {
     icon: <SiDiscord className='text-zinc-300' />,
     title: 'Discord',
-    url: 'https://discord.com/users/886269624608522240'
+    url: 'https://discord.com/users/886269624608522240',
   },
   {
     icon: <SiX className='text-zinc-300' />,
     title: 'X',
-    url: 'https://x.com/nelsonlaidev'
+    url: 'https://x.com/nelsonlaidev',
   },
   {
     icon: <SiStackoverflow className='text-zinc-300' />,
     title: 'Stack overflow',
-    url: 'https://stackoverflow.com/users/15166428/nelson-lai'
+    url: 'https://stackoverflow.com/users/15166428/nelson-lai',
   },
   {
     icon: <SiDevdotto className='text-zinc-300' />,
     title: 'Dev.to',
-    url: 'https://dev.to/nelsonlaidev'
-  }
+    url: 'https://dev.to/nelsonlaidev',
+  },
 ]
 
 const Page = () => {

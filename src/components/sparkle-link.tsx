@@ -17,9 +17,9 @@ const SparkleLink = (props: SparkleLinkProps) => {
             'peer relative flex scale-[calc(1+var(--active)*0.1)] items-center gap-[0.25em] rounded-[100px] bg-sparkle bg-sparkle-radial px-6 py-4 font-medium whitespace-nowrap shadow-sparkle transition-[shadow_var(--transition),scale_var(--transition),background_var(--transition)] [--active:0] [--cut:0.1em]',
             'hover:[--active:1] hover:[--play-state:running]',
             'before:absolute before:inset-[-0.25em] before:-z-10 before:rounded-[100px] before:border-[0.25em] before:border-solid before:border-[hsl(0_0%_20.08%/0.5)] before:opacity-(--active,0) before:transition-[opacity_var(--transition)]',
-            'active:scale-100'
+            'active:scale-100',
           ],
-          className
+          className,
         )}
         {...rest}
       >
@@ -69,9 +69,10 @@ const SparkleLinkParticleGroup = () => {
       '--alpha': `${RANDOM(40, 90) / 100}`,
       '--origin-x': `${Math.random() > 0.5 ? RANDOM(300, 800) * -1 : RANDOM(300, 800)}%`,
       '--origin-y': `${Math.random() > 0.5 ? RANDOM(300, 800) * -1 : RANDOM(300, 800)}%`,
-      '--size': `${RANDOM(40, 90) / 100}`
+      '--size': `${RANDOM(40, 90) / 100}`,
     } as React.CSSProperties
 
+    // oxlint-disable-next-line @eslint-react/set-state-in-effect
     setParticles(
       Array.from({ length: 20 }).map((_, i) => ({
         id: i,
@@ -79,9 +80,9 @@ const SparkleLinkParticleGroup = () => {
           '--x': `${RANDOM(20, 80)}`,
           '--y': `${RANDOM(20, 80)}`,
           '--duration': `${RANDOM(6, 20)}`,
-          ...sparkleStyle
-        } as React.CSSProperties
-      }))
+          ...sparkleStyle,
+        } as React.CSSProperties,
+      })),
     )
   }, [])
 
@@ -102,7 +103,7 @@ const SparkleLinkSpark = () => (
     className={cn([
       'absolute inset-0 rotate-0 animate-flip overflow-hidden rounded-[100px] [mask:linear-gradient(white,transparent_50%)]',
       'before:absolute before:top-0 before:left-1/2 before:aspect-square before:w-[200%] before:[translate:-50%_-15%] before:transform-[rotate(-90deg)] before:animate-rotate before:bg-[conic-gradient(from_0deg,transparent_0_340deg,white_360deg)] before:opacity-[calc(var(--active)+0.4)] before:[transition:opacity_var(--transition)]',
-      'after:absolute after:inset-(--cut) after:rounded-[100px]'
+      'after:absolute after:inset-(--cut) after:rounded-[100px]',
     ])}
   />
 )

@@ -1,8 +1,9 @@
 {
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit",
-    "source.organizeImports": "never"
+    "source.fixAll.oxc": "explicit"
   },
+
+  "editor.defaultFormatter": "oxc.oxc-vscode",
 
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
@@ -14,7 +15,7 @@
 
   "tailwindCSS.classFunctions": ["cva", "cn"],
 
-  "typescript.enablePromptUseWorkspaceTsdk": true,
-  "typescript.preferences.preferTypeOnlyAutoImports": true,
-  "typescript.tsdk": "node_modules/typescript/lib"
+  "js/ts.tsdk.promptToUseWorkspaceVersion": true,
+  "js/ts.preferences.preferTypeOnlyAutoImports": true,
+  "js/ts.tsdk.path": "node_modules/typescript/lib"
 }

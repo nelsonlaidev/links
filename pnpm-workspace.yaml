@@ -1,0 +1,43 @@
+allowBuilds:
+  lefthook: true
+
+saveExact: true
+
+minimumReleaseAgeExclude:
+  - '@oxlint/binding-android-arm-eabi@1.92.0'
+  - '@oxlint/binding-android-arm64@1.92.0'
+  - '@oxlint/binding-darwin-arm64@1.92.0'
+  - '@oxlint/binding-darwin-x64@1.92.0'
+  - '@oxlint/binding-freebsd-x64@1.92.0'
+  - '@oxlint/binding-linux-arm-gnueabihf@1.92.0'
+  - '@oxlint/binding-linux-arm-musleabihf@1.92.0'
+  - '@oxlint/binding-linux-arm64-gnu@1.92.0'
+  - '@oxlint/binding-linux-arm64-musl@1.92.0'
+  - '@oxlint/binding-linux-ppc64-gnu@1.92.0'
+  - '@oxlint/binding-linux-riscv64-gnu@1.92.0'
+  - '@oxlint/binding-linux-riscv64-musl@1.92.0'
+  - '@oxlint/binding-linux-s390x-gnu@1.92.0'
+  - '@oxlint/binding-linux-x64-gnu@1.92.0'
+  - '@oxlint/binding-linux-x64-musl@1.92.0'
+  - '@oxlint/binding-openharmony-arm64@1.92.0'
+  - '@oxlint/binding-win32-arm64-msvc@1.92.0'
+  - '@oxlint/binding-win32-ia32-msvc@1.92.0'
+  - '@oxlint/binding-win32-x64-msvc@1.92.0'
+  - '@tailwindcss/node@4.3.5'
+  - '@tailwindcss/oxide-android-arm64@4.3.5'
+  - '@tailwindcss/oxide-darwin-arm64@4.3.5'
+  - '@tailwindcss/oxide-darwin-x64@4.3.5'
+  - '@tailwindcss/oxide-freebsd-x64@4.3.5'
+  - '@tailwindcss/oxide-linux-arm-gnueabihf@4.3.5'
+  - '@tailwindcss/oxide-linux-arm64-gnu@4.3.5'
+  - '@tailwindcss/oxide-linux-arm64-musl@4.3.5'
+  - '@tailwindcss/oxide-linux-x64-gnu@4.3.5'
+  - '@tailwindcss/oxide-linux-x64-musl@4.3.5'
+  - '@tailwindcss/oxide-wasm32-wasi@4.3.5'
+  - '@tailwindcss/oxide-win32-arm64-msvc@4.3.5'
+  - '@tailwindcss/oxide-win32-x64-msvc@4.3.5'
+  - '@tailwindcss/oxide@4.3.5'
+  - '@tailwindcss/postcss@4.3.5'
+  - geist@1.9.2
+  - oxlint@1.92.0
+  - tailwindcss@4.3.5
