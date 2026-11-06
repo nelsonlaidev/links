@@ -1,11 +1,13 @@
+glob_matcher: doublestar
+
 pre-commit:
   parallel: true
   jobs:
-    - name: prettier
-      run: pnpm prettier --write --ignore-unknown "{staged_files}"
+    - name: oxfmt
+      run: pnpm oxfmt --write --no-error-on-unmatched-pattern {staged_files}
       stage_fixed: true
 
-    - name: lint
-      glob: '*.{js,jsx,cjs,mjs,ts,tsx,cts,mts,d.ts,d.cjs,d.mts}'
-      run: pnpm eslint --fix --max-warnings 0 "{staged_files}"
+    - name: oxlint
+      glob: '**/*.{js,jsx,mjs,cjs,ts,tsx,mts,cts}'
+      run: pnpm oxlint --fix {staged_files}
       stage_fixed: true
