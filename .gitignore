@@ -1,17 +1,22 @@
 # Dependencies
 node_modules
 
-# Next.js
-.next
+# TanStack
+.tanstack/
+
+# Nitro
+.output/
 
 # Misc
 .DS_Store
 *.pem
 
 # Env files
-.env*.local
-.env
+.env*
+!.env.schema
+
+# Varlock
+src/env.ts
 
 # TypeScript
 *.tsbuildinfo
-next-env.d.ts

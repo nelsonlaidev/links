@@ -1,6 +1,8 @@
 @import 'tailwindcss';
 
 @theme inline {
+  --font-sans: 'Geist Variable', ui-sans-serif, system-ui, sans-serif;
+
   --color-sparkle: hsl(260 0% 12%);
   --background-image-sparkle-radial: radial-gradient(
     80% 100% at center 120%,

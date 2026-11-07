@@ -3,7 +3,7 @@
   <h1 align="center">Links</h1>
 </p>
 
-Links is a linktree-like application built with Next.js and Tailwindcss. It allows you to create a personalized page with links to your social media profiles, websites, and other online presence.
+Links is a linktree-like application built with TanStack Start, React, and Tailwind CSS. It allows you to create a personalized page with links to your social media profiles, websites, and other online presence.
 
 ## Getting Started
 
@@ -27,14 +27,16 @@ cd links
 pnpm install
 ```
 
-4. Run the development server.
+4. Create `.env.local` to configure the site URL and optional Umami analytics. See `.env.schema` for defaults and validation rules.
+
+```dotenv
+SITE_URL=http://localhost:3000
+UMAMI_URL=
+UMAMI_WEBSITE_ID=
+```
+
+5. Run the development server at `http://localhost:3000`.
 
 ```bash
 pnpm dev
 ```
-
----
-
-<p align="center">
-Made with ❤️ in Hong Kong
-</p>
