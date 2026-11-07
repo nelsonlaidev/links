@@ -2,8 +2,9 @@
   "compilerOptions": {
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "types": ["vite/client", "@nelsonlaidev/typescript-config/react"]
   },
-  "extends": "@nelsonlaidev/typescript-config/nextjs.json",
-  "include": ["**/*.ts", "**/*.tsx", "next-env.d.ts", ".next/types/**/*.ts", ".next/dev/types/**/*.ts"]
+  "extends": "@nelsonlaidev/typescript-config/tanstack-start.json",
+  "include": ["**/*.ts", "**/*.tsx"]
 }

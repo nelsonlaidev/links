@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import { createFileRoute } from '@tanstack/react-router'
 import { FiBook } from 'react-icons/fi'
 import {
   SiDevdotto,
@@ -14,75 +14,73 @@ import {
 
 import PrimaryLinks from '@/components/primary-links'
 import Spotlight from '@/components/spotlight'
+import { SITE } from '@/lib/site'
 
 const links = [
   {
     icon: <FiBook className='text-zinc-300' />,
     title: 'Blog',
-    url: 'https://nelsonlai.dev',
+    url: SITE.portfolio,
   },
   {
     icon: <SiYoutube className='text-zinc-300' />,
     title: 'YouTube',
-    url: 'https://www.youtube.com/@nelsonlaidev',
+    url: SITE.socials.youtube,
   },
   {
     icon: <SiFacebook className='text-zinc-300' />,
     title: 'Facebook',
-    url: 'https://www.facebook.com/nelsonlaidev',
+    url: SITE.socials.facebook,
   },
   {
     icon: <SiSteam className='text-zinc-300' />,
     title: 'Steam',
-    url: 'https://steamcommunity.com/id/nelsonlaidev/',
+    url: SITE.socials.steam,
   },
   {
     icon: <SiInstagram className='text-zinc-300' />,
     title: 'Instagram',
-    url: 'https://www.instagram.com/nelsonlaidev',
+    url: SITE.socials.instagram,
   },
   {
     icon: <SiGithub className='text-zinc-300' />,
     title: 'GitHub',
-    url: 'https://github.com/nelsonlaidev',
+    url: SITE.socials.github,
   },
   {
     icon: <SiDiscord className='text-zinc-300' />,
     title: 'Discord',
-    url: 'https://discord.com/users/886269624608522240',
+    url: SITE.socials.discord,
   },
   {
     icon: <SiX className='text-zinc-300' />,
     title: 'X',
-    url: 'https://x.com/nelsonlaidev',
+    url: SITE.socials.twitter,
   },
   {
     icon: <SiStackoverflow className='text-zinc-300' />,
     title: 'Stack overflow',
-    url: 'https://stackoverflow.com/users/15166428/nelson-lai',
+    url: SITE.socials.stackoverflow,
   },
   {
     icon: <SiDevdotto className='text-zinc-300' />,
     title: 'Dev.to',
-    url: 'https://dev.to/nelsonlaidev',
+    url: SITE.socials.devto,
   },
 ]
 
-const Page = () => {
+export const Route = createFileRoute('/')({
+  component: RouteComponent,
+})
+
+function RouteComponent() {
   return (
     <>
       <div className='relative mx-auto flex flex-col items-center justify-center gap-4 pt-24 pb-10'>
         <Spotlight className='-top-4 left-56' />
-        <Image
-          src='https://nelsonlai.dev/images/avatar.png'
-          width={90}
-          height={90}
-          alt='Logo'
-          className='rounded-full'
-          priority
-        />
-        <h1 className='text-xl font-semibold'>Nelson Lai</h1>
-        <p className='text-[#a1a1a1]'>full stack engineer</p>
+        <img src={SITE.avatar} width={90} height={90} alt='Logo' className='rounded-full' fetchPriority='high' />
+        <h1 className='text-xl font-semibold'>{SITE.name}</h1>
+        <p className='text-[#a1a1a1]'>{SITE.tagline}</p>
       </div>
       <PrimaryLinks />
       <div className='flex flex-col gap-4 py-3'>
@@ -106,5 +104,3 @@ const Page = () => {
     </>
   )
 }
-
-export default Page

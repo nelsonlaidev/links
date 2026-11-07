@@ -11,7 +11,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  NEXT_PUBLIC_SITE_URL: http://localhost:3000
+  SITE_URL: http://localhost:3000
 
 jobs:
   checks:
@@ -32,8 +32,8 @@ jobs:
           cache: true
           require-lockfile: true
 
-      - name: Generate Next.js types
-        run: pnpm exec next typegen
+      - name: Build
+        run: pnpm build
 
       - parallel:
           - name: Lint
